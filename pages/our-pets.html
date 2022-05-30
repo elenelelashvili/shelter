@@ -13,13 +13,20 @@
                         <a href="index.html"  style="text-decoration: none;"><h1>Cozy House</h1></a>
                         <p>Shelter for pets in boston</p>
                     </div>
+
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    
                    
                     <nav>
                         <ul>
-                        <li><a href="index.html#about-shelter" class="hover-underline-animation" > About the Shelter </a> </li>
-                        <li><a href="" class="hover-underline-animation" id="highlighted"> Our pets </a> </li>
-                        <li><a href="index.html#help" class="hover-underline-animation"> Help the shelter </a> </li>
-                        <li><a href="#contact" class="hover-underline-animation"> Contacts </a> </li>
+                        <li><a href="index.html#about-shelter" class="hover-underline-animation1" > About the Shelter </a> </li>
+                        <li><a href="" class="hover-underline-animation2" id="highlighted2"> Our pets </a> </li>
+                        <li><a href="index.html#help" class="hover-underline-animation3"> Help the shelter </a> </li>
+                        <li><a href="#contact" class="hover-underline-animation4"> Contacts </a> </li>
                         </ul> 
                     </nav> 
             </header>
@@ -132,5 +139,61 @@
             </div>
         </section>
         </footer>
+
+
+        <script>
+            const hamburger = document.querySelector(".hamburger");
+            var clicked = false;
+            const first = document.querySelector(".hover-underline-animation1");
+            const second = document.querySelector(".hover-underline-animation2");
+            const third = document.querySelector(".hover-underline-animation3");
+            const forth = document.querySelector(".hover-underline-animation4");
+
+             var mql = window.matchMedia('(max-width:768px');
+
+             function render(e){
+                 if(e.matches){
+                     hamburger.style.display="block";
+                     first.style.display="none";
+                second.style.display = "none";
+                third.style.display = "none";
+                forth.style.display = "none";
+                     
+                 }else{
+                     hamburger.style.display="none";
+                     first.style.display="block";
+                    second.style.display = "block";
+                    third.style.display = "block";
+                    forth.style.display = "block";
+                
+                 }
+             }
+
+             render(mql);
+             mql.addEventListener('change', render);
+
+            hamburger.addEventListener("click", () =>{
+                if(hamburger.style.display = "block"){
+                if(clicked===false){
+                first.style.display="block";
+                second.style.display = "block";
+                third.style.display = "block";
+                forth.style.display = "block";
+                clicked = true;
+            }else{
+                first.style.display="none";
+                second.style.display = "none";
+                third.style.display = "none";
+                forth.style.display = "none";
+                clicked = false;
+            }
+        }
+
+
+
+        
+
+            });
+        </script>
     </body>
 </html>

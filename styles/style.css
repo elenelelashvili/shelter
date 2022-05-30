@@ -2,6 +2,7 @@
 
 body, html {
     margin: 0;
+    min-width:320px;
 }
 
 
@@ -12,10 +13,15 @@ header{
     justify-content: space-between;
     font-family: Arial, Helvetica, sans-serif;
     flex-wrap: wrap;
+    flex-direction: row;
+    
 }
 
 header div{
     float:left;
+    display:flex;
+    flex-direction: column;
+    column-gap:1px;
 }
 
 .one{
@@ -45,14 +51,18 @@ header div{
     align-items: center;
     letter-spacing: 0.1em;
     color: #FFFFFF;
-    margin-top:-17px;
+    margin-top:-15px;
 }
 
 nav{
     align-items: center;
     margin: 2.1rem 1.5rem 0 9.7rem ;
-    
+    display:flex;
+    flex-wrap:wrap;
+    float:right;
 }
+
+
 
 nav > ul{
     display: flex;
@@ -61,12 +71,12 @@ nav > ul{
 
 ul{
     width:auto;
-    float:right;
     margin-top: 8px;
 }
 
 nav ul li{
-    display:inline-block;
+    display:flex;
+    flex-direction: row;
     padding: 0 0 0 1.7rem;
     /* padding:5.1% 18px; */
 }
@@ -80,8 +90,8 @@ nav > ul > li > a{
     
 }
 
-.hover-underline-animation {
-    display: inline-block;
+.hover-underline-animation1, .hover-underline-animation2, .hover-underline-animation3, .hover-underline-animation4 {
+    flex-direction: row;
     position: relative;
     font-family: 'Arial';
     font-style: normal;
@@ -94,13 +104,26 @@ nav > ul > li > a{
     margin-top:0.1em;
   }
 
+  .hamburger{
+      display:none;
+      cursor:pointer;
+  }
+
+  .bar{
+      display:block;
+      width:25px;
+      height:3px;
+      margin:5px auto;
+      background-color: black;
+  }
+
   
-  .hover-underline-animation:after {
+  /* .hover-underline-animation:after {
     content: '';
     width: 0%;
     height: 3px;
     background-color: #F1CDB3;
-    display: block;
+    display: flex;
     margin: auto;
     font-weight:bold;
     color: #FAFAFA;
@@ -112,7 +135,45 @@ nav > ul > li > a{
 
   .one a:hover{
     color: #FAFAFA;
-  }
+  } */
+
+  @media (max-width:1280px) {
+    .one h1, .one p{
+        
+        flex-flow:flex-start;
+    }
+
+    header{
+        display:flex;
+        align-items: flex-start;
+        row-gap:5%;
+    }
+
+    nav{
+        margin: 2.1rem 1.5rem 0 0;
+    }
+
+
+}
+    @media(max-width:768px) {
+
+        .one h1, .one p{
+            margin-right:50px;
+        }
+
+        .hamburger{
+            display:block;
+            float:left;
+            padding-left:35px;
+            padding-right:15px;
+            margin-top:33px;
+        }
+
+
+        .hover-underline-animation1, .hover-underline-animation2, .hover-underline-animation3, .hover-underline-animation4{
+           display:none;
+        }
+    }
 
 
   /* header end */
@@ -128,11 +189,13 @@ nav > ul > li > a{
       flex:1;
       margin-top:50px;
       padding-right:20px
+      
   }
+
+  
 
   .one-one-text{
       flex:1;
-      margin-top:3px;
       margin-left:2px;
   }
 
@@ -143,11 +206,11 @@ nav > ul > li > a{
     line-height: 130%;
     color:#FFFFFF;
     display: inline-block;
-    margin-top:41.5%;
+    margin-top:20%;
     width:80%;
 }
 
-  .one-one p{
+  #about-shelter{
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -184,6 +247,39 @@ nav > ul > li > a{
     margin-top:6%;
 }
 
+@media(max-width:970px){
+    .one-one h2{
+        margin-top:10%;
+    }
+
+    .one-one-text{
+        margin:13%;
+    }
+
+}
+
+ @media (max-width:768px) {
+    .pets-button{
+        text-align: center;
+    }
+
+    .one-one-img img{
+        width: 100%;
+        min-width: 400px;
+        height: auto;
+    
+      }
+    
+
+    .one-one-text{
+        margin:13%;
+    }
+
+
+}
+
+
+
   /* first page end*/
 
   /* second page start*/
@@ -194,8 +290,10 @@ nav > ul > li > a{
         flex-wrap: wrap;
     }
 
+
     .two-img{
-        margin-left:11.5px;
+        display: block;
+        margin: 0 auto;
     }
 
     .two-text{
@@ -209,16 +307,16 @@ nav > ul > li > a{
     }
 
     .two-text-p1{
-        margin-top:-9px;
+        margin:1.5em;
     }
 
     .two-text-p2{
-        margin-top:1.5em;
+        margin:1.5em;
     }
 
     .two-text h3{
         font-family:Georgia, 'Times New Roman', Times, serif;
-        margin-top:3.3%;
+        margin:1.5em;
         font-size:35px;
         font-weight:400;
         line-height:130%;
@@ -227,6 +325,14 @@ nav > ul > li > a{
         flex:1;
         width:80%;
     }
+
+
+    @media (max-width:768px) {
+        .two-img img{
+            text-align: center;
+        }
+    
+    } 
   
   /* second page end*/
 
@@ -268,6 +374,7 @@ nav > ul > li > a{
         margin-top:1.8%;
         margin-left:8%;
         margin-right:7%;
+        flex:1;
     }
 
     .katrine p, .jennifer p, .woody p{
@@ -289,15 +396,21 @@ nav > ul > li > a{
     
 
     .katrine{
-        margin-right:4.4%;
+        margin-right:3.3%;
+        display: block;
+        margin: 0 auto;
     }
 
     .woody{
         margin-left:3.3%;
+        display: block;
+        margin: 0 auto;
     }
 
     .jennifer{
         margin-left:-2%;
+        display: block;
+        margin: 0 auto;
     }
 
     .arrow{
@@ -371,7 +484,7 @@ nav > ul > li > a{
     }
 
     .three-text-container{
-        margin-top:-27px;
+        margin-top:-13px;
         letter-spacing: 1em;
     }
 
@@ -392,8 +505,15 @@ nav > ul > li > a{
         line-height: 115%;
         letter-spacing: 0.06em;
         color: #545454;
-
     }
+
+
+    @media(max-width:970px){
+        .icon{
+            margin:2% 7%;
+        }
+    }
+
 
   /* fourth page end */
 
@@ -444,7 +564,7 @@ nav > ul > li > a{
 
     .five-text{
         flex:1;
-        margin:7% 10% 7% 2%;
+        justify-content: center;
     }
 
     .five span{
@@ -463,10 +583,54 @@ nav > ul > li > a{
     }
     
 
+    @media(max-width:1174px){
+        .five{
+            display:flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+           
+        }
+        .five-text{
+            margin: auto;
+            width: 50%;
+            padding-left:12%;
+        }  
+    }
+
+
+    @media(max-width:768px) {
+        .five{
+            display:flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+           
+        }
+        .five-text{
+            margin: auto;
+            width: 70%;
+        }  
+
+        .five-img img{
+            width: 100%;
+            min-width: 400px;
+            height: auto;
+        
+          }
+    }
+
     
   /* fifth page end*/
 
   /* footer start */
+
+  footer{
+      display:flex;
+      flex-wrap:wrap;
+  }
 
     footer .one{
         display:flex;
@@ -500,6 +664,7 @@ nav > ul > li > a{
       flex:1;
       margin-top:0.5%;
       margin-left:4%;
+      min-width:300px;
   }
 
   .footer-three{
@@ -511,5 +676,20 @@ nav > ul > li > a{
   }
 
 
+  @media(max-width:1174px){
+    .footer-three{
+        margin-left:37.5%;
+    }
+}
+
+@media(max-width:796px) {
+    .footer-three{
+        margin-left: 20%;
+}
+}
+
+
   /* footer end */
 
+
+  

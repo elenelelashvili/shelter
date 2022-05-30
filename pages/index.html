@@ -9,18 +9,28 @@
     <body>
         <section class="one">
             <header>
-                    <div>
+                    <div class = "logo">
                         <a href="index.html"  style="text-decoration: none;"><h1>Cozy House</h1></a>
                         <p>&nbsp;Shelter for pets in Boston</p>
                     </div>
+
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                    
                     <nav>
+
                         <ul>
-                        <li><a href="#about-shelter" id="highlight" class="hover-underline-animation"> About the shelter </a> </li>
-                        <li><a href="our-pets.html" class="hover-underline-animation"> Our pets </a> </li>
-                        <li><a href="#help" class="hover-underline-animation">  Help the shelter </a> </li>
-                        <li><a href="#contact" class="hover-underline-animation"> Contacts </a> </li>
+                        <li><a href="#about-shelter" id="highlight" class="hover-underline-animation1"> About the shelter </a> </li>
+                        <li><a href="our-pets.html" class="hover-underline-animation2" > Our pets </a> </li>
+                        <li><a href="#help" class="hover-underline-animation3">  Help the shelter </a> </li>
+                        <li><a href="#contact" class="hover-underline-animation4"> Contacts </a> </li>
                         </ul> 
+                   
+
+                        
                     </nav> 
             </header>
             
@@ -28,7 +38,9 @@
                 <div class="one-one-text" >
                     <h2>Not only people need a house</h2>
                     <p id="about-shelter">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!</p>
+                    <div class="pets-button">
                     <a href="#pets" style="text-decoration: none;"><button>Make a friend</button></a>
+                    </div>
                 </div>
                 <div class="one-one-img">
                 <img src="../assets/pictures/start-screen-puppy.png">
@@ -57,9 +69,9 @@
         
             <div class="three-img">
 
-                <div class="arrow" id="arrow-left">
+                <!-- <div class="arrow" id="arrow-left">
                     <img src="../assets/icons/Arrow.png">
-                </div>
+                </div> -->
                 <div class="katrine">
                     <img src="../assets/pictures/pets-katrine.png">
                     <p>Katrine</p>
@@ -78,17 +90,14 @@
                     <button >Learn more</button>
                 </div>
 
-                <div class="arrow" id="arrow-right">
+                <!-- <div class="arrow" id="arrow-right">
                     <img src="../assets/icons/Arrow (1).png">
-                </div>
+                </div> -->
             </div>
        
             <button class="getToKnowButton">Get to know the rest</button>
 
         </section>
-
-        <br />
-        <br />
 
         <section class="four" id="help">
             <div class="three-text-container">
@@ -142,7 +151,7 @@
                     <p>Collars/leashes</p>
                 </div>
 
-                <div class="icon">
+                <div class="icon" id="sleep">
                     <img src="../assets/icons/sleeping-area.png">
                     <p>Sleeping area</p>
                 </div>
@@ -155,7 +164,7 @@
            <div class="five-img">
                <img src="../assets/pictures/donation-dog.png">
            </div>     
-
+           
            <div class="five-text">
                <h3>You can also make a donation</h3>
                <h5>Name of the bank / Type of bank account</h5>
@@ -170,6 +179,8 @@
         
         <footer>
             <section class="one" id="contact">
+
+                
             <div class="footer-one">
                 <h3>For questions and suggestions</h3>
                     <div class="footer-div">
@@ -210,6 +221,61 @@
         </section>
         </footer>
 
+        <script>
+            const hamburger = document.querySelector(".hamburger");
+            var clicked = false;
+            const first = document.querySelector(".hover-underline-animation1");
+            const second = document.querySelector(".hover-underline-animation2");
+            const third = document.querySelector(".hover-underline-animation3");
+            const forth = document.querySelector(".hover-underline-animation4");
+
+             var mql = window.matchMedia('(max-width:768px');
+
+             function render(e){
+                 if(e.matches){
+                     hamburger.style.display="block";
+                     first.style.display="none";
+                second.style.display = "none";
+                third.style.display = "none";
+                forth.style.display = "none";
+                     
+                 }else{
+                     hamburger.style.display="none";
+                     first.style.display="block";
+                    second.style.display = "block";
+                    third.style.display = "block";
+                    forth.style.display = "block";
+                
+                 }
+             }
+
+             render(mql);
+             mql.addEventListener('change', render);
+
+            hamburger.addEventListener("click", () =>{
+                if(hamburger.style.display = "block"){
+                if(clicked===false){
+                first.style.display="block";
+                second.style.display = "block";
+                third.style.display = "block";
+                forth.style.display = "block";
+                clicked = true;
+            }else{
+                first.style.display="none";
+                second.style.display = "none";
+                third.style.display = "none";
+                forth.style.display = "none";
+                clicked = false;
+            }
+        }
+
+
+
+        
+
+            });
+        </script>
 
     </body>
 </html>
+

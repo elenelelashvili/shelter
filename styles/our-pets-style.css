@@ -4,12 +4,13 @@ body, html {
 }
 
 header{
-    margin:0% 4% -2% 4%;
+    margin:0% 1% -2% 3%;
     padding-top:2%;
     display: flex;
     justify-content: space-between;
     font-family: Arial, Helvetica, sans-serif;
     flex-wrap: wrap;
+    flex-direction: row;
     color:#292929;
 }
 
@@ -27,10 +28,24 @@ header div{
     margin-bottom:-0.2%;
 }
 
+.bar{
+  display:block;
+  width:25px;
+  height:3px;
+  margin:5px auto;
+  background-color: black;
+}
+
+.hamburger{
+  display:none;
+  cursor:pointer;
+}
+
 nav{
-    font-size:18px;
-    float:right;
-    padding:16px;
+  align-items: center;
+  margin: 2.1rem 1.5rem 0 2rem ;
+  display:flex;
+  flex-wrap:wrap;
 }
 
 .one a{
@@ -45,14 +60,21 @@ nav ul li{
     position:relative;
 }
 
-.hover-underline-animation {
-    display: inline-block;
-    position: relative;
-    color: #CDCDCD;
-    text-decoration: none;
-  }
+.hover-underline-animation1, .hover-underline-animation2, .hover-underline-animation3, .hover-underline-animation4 {
+  flex-direction: row;
+  position: relative;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  text-decoration:none;
+  color: #CDCDCD;
+  padding-left:8.7px;
+  margin-top:0.1em;
+}
   
-  .hover-underline-animation:after {
+  /* .hover-underline-animation:after {
     content: '';
     width: 0%;
     height: 2px;
@@ -69,15 +91,42 @@ nav ul li{
 
   .one a:hover{
     color: #292929;
-  }
+  } */
 
-  #highlighted{
+  #highlighted2{
     text-decoration: underline;
     text-decoration-color: #F1CDB3;
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
   }
 
+
+  @media(max-width:768px) {
+
+    nav{
+      margin:0;
+    }
+
+    .one h1, .one p{
+        margin-right:50px;
+
+    }
+
+
+
+    .hamburger{
+        display:block;
+        float:left;
+        padding-left:35px;
+        padding-right:15px;
+        margin-top:33px;
+    }
+
+
+    .hover-underline-animation1, .hover-underline-animation2, .hover-underline-animation3, .hover-underline-animation4{
+       display:none;
+    }
+}
   /* header end */ 
 
   /* page start */
@@ -226,6 +275,19 @@ footer .footer{
 
   footer a{
     text-decoration: none;
+}
+
+
+@media(max-width:1174px){
+  .footer-three{
+      margin-left:37.5%;
+  }
+}
+
+@media(max-width:796px) {
+  .footer-three{
+      margin-left: 20%;
+}
 }
 
   /* footer end */
