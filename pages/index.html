@@ -73,7 +73,11 @@
                  <div class="arrow" id="arrow-left">
                     <img src="../assets/icons/Arrow.png">
                 </div> 
-                <div class="katrine">
+            
+           
+                <div class="pets-class">
+                    <div class="slider-pets-class" id="slider-id">
+                <!-- <div class="katrine">
                     <img src="../assets/pictures/pets-katrine.png">
                     <p>Katrine</p>
                     <button id="popup-btn" onclick="petClick()">Learn more</button>
@@ -91,10 +95,10 @@
                     <img src="../assets/pictures/pets-woody.png">
                     <p>Woody</p>
                     <button id="popup-btn" onclick="petClick()">Learn more</button>
-                </div>
+                </div> -->
 
-
-                
+            </div>
+        </div>
     
                  <div class="arrow" id="arrow-right">
                     <img src="../assets/icons/Arrow (1).png">
@@ -109,19 +113,32 @@
             <div class="modal-content">
                 
                     <div class="modal-picture">
-                        <img src="../assets/pictures/pets-katrine.png">
+                        <img id="popup-img" class="popup-pic" src="">
                         
                         <div class="modal-text">
                             <div class="close">
                                 <img src="../assets/icons/Vector.png">
                             </div>
-                        <h2 >Katrine</h2>
-                        <h3 >Cat - British Shorthair</h3>
-                        <p >Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
-                        <p ><b>Age:</b>6 months</p>
-                        <p ><b>Inoculations:</b>panleukopenia</p>
-                        <p ><b>Diseases:</b>none</p>
-                        <p><b>Parasites:</b>none</p>
+
+                        <h2 id="popup-name"></h2>
+                        <h3 id="popup-type"></h3>
+                        <h3 id="popup-breed"></h3>
+                        <p id="popup-description"></p>
+                        <div style="display:inline-flex">
+                        <p><b>Age:</b></p><p id="popup-age"></p>
+                    </div>
+                    <br />
+                    <div style="display:inline-flex">
+                        <p><b>Inoculations:</b></p><p id="popup-inoculations"></p>
+                    </div>
+                    <br>
+                    <div style="display:inline-flex">
+                        <p><b>Diseases:</b></p><p id="popup-diseases"></p>
+                    </div>
+                    <br>
+                    <div style="display:inline-flex">
+                        <p><b>Parasites:</b></p><p id="popup-parasites"></p>
+                    </div>
                             </div>
                         </div>
                         
@@ -330,7 +347,128 @@
             });
 
 
+            // fetching json 
+
+            fetch("./petsCarusel.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log("error: " + err);
+            });
+
+            //Only One pet Slider
+function appendData(data) {
+    
+    let slider = document.getElementById("slider-id");
+    let arrowLeft = document.getElementById("arrow-left");
+    let arrowRight = document.getElementById("arrow-right");
+    let scale = 0;
+    let pictArray = [];
+    let grandArray = [];
+    for(let i = 0; i < 30; i++){
+        for(let j = 0; j < data.length; j++){
+             pictArray.push(data[j]);
             
+        }
+        grandArray.push(pictArray);
+    }
+
+     console.log(grandArray);
+
+    for(let i = 0; i < pictArray.length; i++){
+        let petEverything = document.createElement("div");
+        petEverything.className = "pet-everything";
+        let testImg = document.createElement("img");
+        let petP = document.createElement("p");
+        let petBtn = document.createElement("button");
+        petP.className = "pet-name-p";
+        petP.innerText = pictArray[i].name;
+        petBtn.className = "pet-btn";
+        petBtn.innerText = "Learn more";
+        petBtn.onclick = function showInfo(){
+            let popupImg = document.getElementById("popup-img");
+            popupImg.src= pictArray[i].img;
+            let popupName = document.getElementById("popup-name");
+            popupName.innerHTML = pictArray[i].name;
+            let popupType = document.getElementById("popup-type");
+            popupType.innerHTML = pictArray[i].type;
+            let popupBreed = document.getElementById("popup-breed");
+            popupBreed.innerHTML = pictArray[i].breed;
+            let popupDescription = document.getElementById("popup-description");
+            popupDescription.innerHTML = pictArray[i].description;
+            let popupAge = document.getElementById("popup-age");
+            popupAge.innerText = pictArray[i].age;
+            let popupInoculations = document.getElementById("popup-inoculations");
+            popupInoculations.innerText =pictArray[i].inoculations;
+            let popupDiseases = document.getElementById("popup-diseases");
+            popupDiseases.innerText=pictArray[i].diseases;
+            let popupParasites = document.getElementById("popup-parasites");
+            popupParasites.innerText = pictArray[i].parasites;
+            document.querySelector('.bg-modal').style.display = 'flex';
+            
+
+        }; 
+        testImg.src=pictArray[i].img;
+        petEverything.append(testImg);
+        petEverything.append(petP);
+        petEverything.append(petBtn);
+        slider.append(petEverything);
+    }
+
+    arrowLeft.onclick = function goLeft(){
+        scale += 810;
+        slider.style.cssText = `transform: translateX(${scale}px); transition: 0.5s`;
+    }
+
+    arrowRight.onclick = function goRight(){
+        scale -= 810;
+        slider.style.cssText = `transform: translateX(${scale}px); transition: 0.5s`;
+    } 
+ 
+//   let container = document.createElement("div"); 
+//   container.className = "container"; 
+//   let arrL = document.createElement("button");
+//   let arrR = document.createElement("button");
+//   arrL.innerText = "left";
+//   arrR.innerText = "right";
+
+//   let container2 = document.createElement("div");
+
+//   container.appendChild(arrL);
+
+//   container2.className = "container2";
+
+//   let image = document.createElement("img");
+//   let counter = 0;
+//   image.src = data[counter].img;
+//   function nextF() {
+//     counter++;
+//     if (counter > data.length - 1) {
+//       counter = 0;
+//     }
+//     image.src = data[counter].img;
+//   }
+//   function prevF() {
+//     counter--;
+//     if (counter < 0) {
+//       counter = data.length - 1;
+//     }
+//     image.src = data[counter].img;
+//   }
+//   container2.appendChild(image);
+
+//   arrL.addEventListener("click", prevF);
+//   arrR.addEventListener("click", nextF);
+
+//   container.appendChild(container2);
+//   container.appendChild(arrR);
+//   let petSlider = document.getElementById("pets-slider-id");
+//   petSlider.append(container);
+}
                     
                 
         </script>

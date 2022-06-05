@@ -241,6 +241,30 @@ nav ul li{
       align-items: center;
       display:none;
   }
+
+  @media(max-width:768px) {
+
+    .modal-picture img{
+        display:none;
+    }
+
+    .modal-picture h2, .modal-picture h3{
+        display:flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding:0px 10px;
+        margin: 0px 10px;
+    }
+
+    .modal-content{
+        margin:40px;
+    }
+
+    .modal-picture p{
+        margin:30px;
+    }
+}  
   
   .modal-content{
       width:900px;
