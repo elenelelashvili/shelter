@@ -43,49 +43,49 @@
                 <div class="pet-div">
                     <img src="../assets/pictures/pets-katrine.png">
                     <p>Katrine</p>
-                    <button>Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/pets-jennifer.png">
                     <p>Jennifer</p>
-                    <button>Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/pets-woody.png">
                     <p>Woody</p>
-                    <button >Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/sophia.png">
                     <p>Sophia</p>
-                    <button >Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/timmy.png">
                     <p>Timmy</p>
-                    <button >Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/charly.png">
                     <p>Charly</p>
-                    <button >Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/scarlett.png">
                     <p>Scarlett</p>
-                    <button >Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
 
                 <div class="pet-div">
                     <img src="../assets/pictures/freddie.png">
                     <p>Freddie</p>
-                    <button >Learn more</button>
+                    <button onclick="petClick()">Learn more</button>
                 </div>
             </div>
 
@@ -97,6 +97,33 @@
                 <button>&gt; &gt;</button>
             </div>
         </section>
+
+        <div class="bg-modal">
+            <div class="modal-content">
+                
+                    <div class="modal-picture">
+                        <img src="../assets/pictures/pets-katrine.png">
+                        
+                        <div class="modal-text">
+                            <div class="close">
+                                <img src="../assets/icons/Vector.png">
+                            </div>
+                        <h2 >Katrine</h2>
+                        <h3 >Cat - British Shorthair</h3>
+                        <p >Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                        <p ><b>Age:</b>6 months</p>
+                        <p ><b>Inoculations:</b>panleukopenia</p>
+                        <p ><b>Diseases:</b>none</p>
+                        <p><b>Parasites:</b>none</p>
+                            </div>
+                        </div>
+                        
+                   
+                </div>
+                
+            </div>
+
+            
 
         <footer>
             <section class="footer" id="contact">
@@ -142,6 +169,24 @@
 
 
         <script>
+
+            function petClick(){
+                        document.querySelector('.bg-modal').style.display = 'flex';
+                        var xPos = window.scrollX;
+                            var yPos = window.scrollY;
+                            window.onscroll = () => {
+                                window.scroll(xPos, yPos);
+                            };
+                    };
+
+            
+                    window.addEventListener('mouseup', function(event){
+                        if(event.target != document.querySelector('.modal-content')){
+                             document.querySelector('.bg-modal').style.display = 'none';
+                             window.onscroll = "";  
+                         }
+                     });
+
             const hamburger = document.querySelector(".hamburger");
             var clicked = false;
             const first = document.querySelector(".hover-underline-animation1");
@@ -179,12 +224,14 @@
                 second.style.display = "block";
                 third.style.display = "block";
                 forth.style.display = "block";
+                hamburger.style.transform = 'rotate(90deg)';
                 clicked = true;
             }else{
                 first.style.display="none";
                 second.style.display = "none";
                 third.style.display = "none";
                 forth.style.display = "none";
+                hamburger.style.transform = 'rotate(0deg)';
                 clicked = false;
             }
         }
