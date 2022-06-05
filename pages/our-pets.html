@@ -1,0 +1,246 @@
+<html>
+    <head>
+        <title>Shelter</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/our-pets-style.css">
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <section class="one">
+            <header>
+                    <div>
+                        <a href="index.html"  style="text-decoration: none;"><h1>Cozy House</h1></a>
+                        <p>Shelter for pets in boston</p>
+                    </div>
+
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    
+                   
+                    <nav>
+                        <ul>
+                        <li><a href="index.html#about-shelter" class="hover-underline-animation1" > About the Shelter </a> </li>
+                        <li><a href="" class="hover-underline-animation2" id="highlighted2"> Our pets </a> </li>
+                        <li><a href="index.html#help" class="hover-underline-animation3"> Help the shelter </a> </li>
+                        <li><a href="#contact" class="hover-underline-animation4"> Contacts </a> </li>
+                        </ul> 
+                    </nav> 
+            </header>
+        </section>
+
+        <section class="page">
+            <div class="page-text">
+                <h3>Our friends who 
+                    <br />
+                    are looking for a house</h3>
+            </div>
+
+            <div class="page-img">
+                <div class="pet-div">
+                    <img src="../assets/pictures/pets-katrine.png">
+                    <p>Katrine</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/pets-jennifer.png">
+                    <p>Jennifer</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/pets-woody.png">
+                    <p>Woody</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/sophia.png">
+                    <p>Sophia</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/timmy.png">
+                    <p>Timmy</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/charly.png">
+                    <p>Charly</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/scarlett.png">
+                    <p>Scarlett</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+
+                <div class="pet-div">
+                    <img src="../assets/pictures/freddie.png">
+                    <p>Freddie</p>
+                    <button onclick="petClick()">Learn more</button>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button id="disabled">&lt; &lt;</button>
+                <button id="disabled">&lt;</button>
+                <button>1</button>
+                <button>&gt;</button>
+                <button>&gt; &gt;</button>
+            </div>
+        </section>
+
+        <div class="bg-modal">
+            <div class="modal-content">
+                
+                    <div class="modal-picture">
+                        <img src="../assets/pictures/pets-katrine.png">
+                        
+                        <div class="modal-text">
+                            <div class="close">
+                                <img src="../assets/icons/Vector.png">
+                            </div>
+                        <h2 >Katrine</h2>
+                        <h3 >Cat - British Shorthair</h3>
+                        <p >Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur. Will love you until the last breath she takes as long as you are the one. She is picky about her affection. She loves cuddles and to stretch into your hands for a deeper relaxations.</p>
+                        <p ><b>Age:</b>6 months</p>
+                        <p ><b>Inoculations:</b>panleukopenia</p>
+                        <p ><b>Diseases:</b>none</p>
+                        <p><b>Parasites:</b>none</p>
+                            </div>
+                        </div>
+                        
+                   
+                </div>
+                
+            </div>
+
+            
+
+        <footer>
+            <section class="footer" id="contact">
+            <div class="footer-one">
+                <h3>For questions and suggestions</h3>
+                    <div class="footer-div">
+                        <a href="mailto:email@shelter.com">
+                            <img src="../assets/icons/mail.png">
+                            <span>email@shelter.com</span>
+                            </a>
+                    </div>
+                        <br />
+                        <br />
+                    <div class="footer-div">
+                        <a href="tel:+136745677554">
+                            <img src="../assets/icons/phone.png">
+                            <span>+13 674 567 75 54</span>
+                            </a>
+                    </div>
+            </div>
+            <div class="footer-two">
+            
+                <h3>We are waiting for your visit</h3>
+
+                    <div class="footer-div">
+                        <a href="https://goo.gl/maps/vwyRN84Z8nooDypg9">
+                            <img src="../assets/icons/pin.png">
+                            <span>  1 Central Street, Boston (entrance from the store)</span></a>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="footer-div">
+                        <a href="https://goo.gl/maps/vwyRN84Z8nooDypg9"> <img src="../assets/icons/pin.png">
+                            <span>18 South Park, London </span></a>
+                    </div>
+            </div>
+
+            <div class="footer-three">
+                <img src="../assets/pictures/footer-puppy.png">
+            </div>
+        </section>
+        </footer>
+
+
+        <script>
+
+            function petClick(){
+                        document.querySelector('.bg-modal').style.display = 'flex';
+                        var xPos = window.scrollX;
+                            var yPos = window.scrollY;
+                            window.onscroll = () => {
+                                window.scroll(xPos, yPos);
+                            };
+                    };
+
+            
+                    window.addEventListener('mouseup', function(event){
+                        if(event.target != document.querySelector('.modal-content')){
+                             document.querySelector('.bg-modal').style.display = 'none';
+                             window.onscroll = "";  
+                         }
+                     });
+
+            const hamburger = document.querySelector(".hamburger");
+            var clicked = false;
+            const first = document.querySelector(".hover-underline-animation1");
+            const second = document.querySelector(".hover-underline-animation2");
+            const third = document.querySelector(".hover-underline-animation3");
+            const forth = document.querySelector(".hover-underline-animation4");
+
+             var mql = window.matchMedia('(max-width:768px');
+
+             function render(e){
+                 if(e.matches){
+                     hamburger.style.display="block";
+                     first.style.display="none";
+                second.style.display = "none";
+                third.style.display = "none";
+                forth.style.display = "none";
+                     
+                 }else{
+                     hamburger.style.display="none";
+                     first.style.display="block";
+                    second.style.display = "block";
+                    third.style.display = "block";
+                    forth.style.display = "block";
+                
+                 }
+             }
+
+             render(mql);
+             mql.addEventListener('change', render);
+
+            hamburger.addEventListener("click", () =>{
+                if(hamburger.style.display = "block"){
+                if(clicked===false){
+                first.style.display="block";
+                second.style.display = "block";
+                third.style.display = "block";
+                forth.style.display = "block";
+                hamburger.style.transform = 'rotate(90deg)';
+                clicked = true;
+            }else{
+                first.style.display="none";
+                second.style.display = "none";
+                third.style.display = "none";
+                forth.style.display = "none";
+                hamburger.style.transform = 'rotate(0deg)';
+                clicked = false;
+            }
+        }
+
+
+
+        
+
+            });
+        </script>
+    </body>
+</html>
